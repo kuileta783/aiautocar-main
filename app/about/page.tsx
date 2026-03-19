@@ -4,6 +4,12 @@ export default function About() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-8">About AIAutoCar</h1>
         
+        <img 
+          src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200&q=80" 
+          alt="AI Automotive Technology"
+          className="w-full rounded-xl mb-12"
+        />
+        
         <div className="space-y-8 text-white/70">
           <p className="text-lg">
             Welcome to AIAutoCar, your premier destination for all things related to 
@@ -18,6 +24,12 @@ export default function About() {
               how AI is transforming the way we drive and interact with vehicles.
             </p>
           </div>
+
+          <img 
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" 
+            alt="AI Technology"
+            className="w-full rounded-xl"
+          />
 
           <div className="border-l-2 border-cyan-500 pl-6">
             <h2 className="text-xl font-semibold text-white mb-4">What We Cover</h2>
@@ -63,6 +75,12 @@ export default function About() {
               AI research, and tech journalism, we bring comprehensive insights to our readers.
             </p>
           </div>
+
+          <img 
+            src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80" 
+            alt="Future of Driving"
+            className="w-full rounded-xl"
+          />
 
           <div className="mt-12 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-xl text-center">
             <h2 className="text-xl font-semibold text-white mb-4">Stay Connected</h2>

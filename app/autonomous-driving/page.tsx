@@ -7,6 +7,12 @@ export default function AutonomousDriving() {
           Self-driving technology is advancing rapidly. Learn about the different levels of autonomy and how they work.
         </p>
 
+        <img 
+          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80" 
+          alt="Autonomous Driving"
+          className="w-full rounded-xl mb-12"
+        />
+
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-cyan-400 mb-6">SAE Automation Levels</h2>
           <div className="space-y-4">
@@ -31,6 +37,11 @@ export default function AutonomousDriving() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 bg-white/5 border border-white/10 rounded-xl">
+            <img 
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" 
+              alt="Sensors"
+              className="w-full aspect-video object-cover rounded-lg mb-4"
+            />
             <h3 className="text-lg font-semibold text-white mb-4">Key Sensors Used</h3>
             <ul className="space-y-3">
               {[
@@ -51,6 +62,11 @@ export default function AutonomousDriving() {
           </div>
 
           <div className="p-6 bg-white/5 border border-white/10 rounded-xl">
+            <img 
+              src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&q=80" 
+              alt="Current Status"
+              className="w-full aspect-video object-cover rounded-lg mb-4"
+            />
             <h3 className="text-lg font-semibold text-white mb-4">Current Status (2026)</h3>
             <ul className="space-y-3">
               {[

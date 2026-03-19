@@ -68,18 +68,23 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-white mb-12 text-center">Latest Articles</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "The Rise of AI in Automotive", date: "March 15, 2026", excerpt: "How artificial intelligence is transforming the car industry.", href: "/blog" },
-              { title: "Level 4 Autonomy: What It Means", date: "March 10, 2026", excerpt: "Understanding the difference between Level 3 and Level 4 autonomous systems.", href: "/autonomous-driving" },
-              { title: "Voice Assistants in Modern Cars", date: "March 5, 2026", excerpt: "From Alexa to Google Assistant, how voice tech is evolving in vehicles.", href: "/ai-cars" },
+              { title: "The Rise of AI in Automotive", date: "March 15, 2026", excerpt: "How artificial intelligence is transforming the car industry.", href: "/blog/rise-of-ai-in-automotive", image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600&q=80" },
+              { title: "Level 4 Autonomy: What It Means", date: "March 10, 2026", excerpt: "Understanding the difference between Level 3 and Level 4 autonomous systems.", href: "/blog/level-4-autonomy-explained", image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80" },
+              { title: "Voice Assistants in Modern Cars", date: "March 5, 2026", excerpt: "From Alexa to Google Assistant, how voice tech is evolving in vehicles.", href: "/blog/voice-assistants-modern-cars", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" },
             ].map((post) => (
               <Link
                 key={post.title}
                 href={post.href}
-                className="p-6 bg-black/50 border border-white/10 rounded-xl hover:border-cyan-500/30 transition group"
+                className="p-0 bg-black/50 border border-white/10 rounded-xl overflow-hidden hover:border-cyan-500/30 transition group"
               >
-                <p className="text-sm text-white/40 mb-2">{post.date}</p>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">{post.title}</h3>
-                <p className="text-sm text-white/50">{post.excerpt}</p>
+                <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-blue-500/20 overflow-hidden">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-white/40 mb-2">{post.date}</p>
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition">{post.title}</h3>
+                  <p className="text-sm text-white/50">{post.excerpt}</p>
+                </div>
               </Link>
             ))}
           </div>
