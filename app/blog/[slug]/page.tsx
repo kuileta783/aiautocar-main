@@ -1,13 +1,6 @@
 import Link from "next/link";
 
-const posts: Record<string, {
-  title: string;
-  date: string;
-  image: string;
-  category: string;
-  excerpt: string;
-  content: React.ReactNode;
-}> = {
+const posts = {
   "rise-of-ai-in-automotive": {
     title: "The Rise of AI in Automotive Industry",
     date: "March 15, 2026",
@@ -118,7 +111,7 @@ const posts: Record<string, {
             { year: "2020", desc: "Alexa Auto and Google Assistant integration" },
             { year: "2023", desc: "Built-in assistants with natural language understanding" },
             { year: "2026", desc: "AI-powered assistants with predictive capabilities" },
-          ].map((item, i) => (
+          ].map((item) => (
             <div key={item.year} className="flex gap-4 items-start">
               <span className="text-cyan-400 font-bold min-w-[60px]">{item.year}</span>
               <span className="text-white/70">{item.desc}</span>
@@ -144,8 +137,15 @@ const posts: Record<string, {
   },
 };
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
+export default function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  return (
+    <BlogPostContent params={params} />
+  );
+}
+
+async function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = posts[slug as keyof typeof posts];
   
   if (!post) {
     return (
