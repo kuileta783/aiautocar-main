@@ -1,68 +1,30 @@
-import Link from "next/link";
-
-export const metadata = {
-  title: "AI Cars - AIAutoCar",
-  description: "Explore the latest AI-powered cars and intelligent automotive technology.",
-};
-
 export default function AICars() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <header className="border-b border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-white">
-            <span className="text-cyan-400">AI</span>AutoCar
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-slate-400 hover:text-cyan-400 transition">Home</Link>
-            <Link href="/about" className="text-slate-400 hover:text-cyan-400 transition">About</Link>
-            <Link href="/ai-cars" className="text-white hover:text-cyan-400 transition">AI Cars</Link>
-            <Link href="/autonomous-driving" className="text-slate-400 hover:text-cyan-400 transition">Autonomous Driving</Link>
-            <Link href="/contact" className="text-slate-400 hover:text-cyan-400 transition">Contact</Link>
-          </nav>
-        </div>
-      </header>
-
-      <main className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-white mb-4">AI-Powered Cars</h1>
-          <p className="text-xl text-slate-400 mb-12">
-            Discover how artificial intelligence is revolutionizing the automotive industry.
+    <div className="bg-black min-h-screen py-20 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-8">AI Cars</h1>
+        <div className="space-y-6 text-white/70">
+          <p>
+            Artificial intelligence is revolutionizing the automotive industry. 
+            From smart assistants to autonomous driving capabilities, AI is making 
+            our roads safer and our drives more enjoyable.
           </p>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="text-2xl font-semibold text-white mt-10 mb-4">Featured Technologies</h2>
+          <div className="grid gap-4">
             {[
-              { title: "Tesla Autopilot", desc: "Advanced driver assistance with neural network processing", brand: "Tesla" },
-              { title: "Waymo Autonomous", desc: "Level 4 autonomous driving technology", brand: "Waymo" },
-              { title: "Mercedes MBUX", desc: "AI-powered infotainment and voice assistant", brand: "Mercedes-Benz" },
-              { title: "BMW iDrive 8", desc: "Intelligent personal assistant with natural language", brand: "BMW" },
-            ].map((car, i) => (
-              <div key={i} className="bg-slate-800 rounded-xl p-6 border border-slate-700">
-                <span className="text-cyan-400 text-sm font-semibold">{car.brand}</span>
-                <h3 className="text-xl font-semibold text-white mt-2 mb-3">{car.title}</h3>
-                <p className="text-slate-400">{car.desc}</p>
+              { name: "Tesla Autopilot", desc: "Advanced driver assistance with neural networks" },
+              { name: "Waymo", desc: "Full self-driving technology" },
+              { name: "GM Super Cruise", desc: "Hands-free driving on mapped highways" },
+              { name: "Ford BlueCruise", desc: "Intelligent adaptive cruise control" },
+            ].map((tech) => (
+              <div key={tech.name} className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                <h3 className="font-semibold text-white">{tech.name}</h3>
+                <p className="text-sm text-white/50 mt-1">{tech.desc}</p>
               </div>
             ))}
           </div>
-
-          <div className="mt-12 bg-slate-800 rounded-xl p-8 border border-slate-700">
-            <h2 className="text-2xl font-bold text-white mb-4">Key AI Features in Modern Cars</h2>
-            <ul className="space-y-3 text-slate-400">
-              <li>🎙️ Natural language voice assistants</li>
-              <li>🛡️ Real-time collision avoidance</li>
-              <li>📱 Smartphone integration with AI sync</li>
-              <li>🗺️ AI-powered navigation systems</li>
-              <li>⚡ Intelligent battery management for EVs</li>
-            </ul>
-          </div>
         </div>
-      </main>
-
-      <footer className="border-t border-slate-700 py-8 px-4 mt-16">
-        <div className="max-w-7xl mx-auto text-center text-slate-500">
-          <p>&copy; 2026 AIAutoCar.com. All rights reserved.</p>
-        </div>
-      </footer>
+      </div>
     </div>
   );
 }
